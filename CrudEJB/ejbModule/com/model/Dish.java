@@ -1,5 +1,7 @@
 package com.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -8,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -29,6 +32,9 @@ public class Dish {
 	@JoinColumn(name = "categories_id")
 	private Categories categories;
 
+	@OneToMany(mappedBy = "dish") //ewentualnie zmienic na dishes
+    private List<Ingredient> ingredients;
+	
 	public int getId() {
 		return id;
 	}
@@ -83,5 +89,13 @@ public class Dish {
 
 	public void setCategories(Categories categories) {
 		this.categories = categories;
+	}
+
+	public List<Ingredient> getIngredients() {
+		return ingredients;
+	}
+
+	public void setIngredients(List<Ingredient> ingredients) {
+		this.ingredients = ingredients;
 	}
 }

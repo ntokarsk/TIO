@@ -19,7 +19,8 @@
                     <h:form>
                         <p:growl id="messages"/>
                         <p:menubar id="headerCartSize">
-                            <p:submenu label="asdasdasd" icon="ui-icon-user">
+                            <p:submenu label="USER" rendered="#{userMB.userUser() or userMB.userAdmin}" icon="ui-icon-user">
+                                <p:menuitem value="Menu" url="/pages/protected/user/categories.xhtml" icon="ui-icon-arrowreturnthick-1-w" />
                                 <p:menuitem value="Lista zamówień" url="/user/orders.xhtml" icon="ui-icon-arrowreturnthick-1-w" />
                                 <p:submenu label="Subskrybcje" icon="ui-icon-arrowreturnthick-1-e">
                                     <p:menuitem value="Lista subskrybcji" url="/user/subscription/list.xhtml"/>
@@ -27,10 +28,9 @@
                                 </p:submenu>
                                 <p:menuitem value="Ustawienia" url="/user/settings/index.xhtml" icon="ui-icon-arrowreturnthick-1-e" />
                             </p:submenu>
-                            <p:submenu label="drugie" icon="ui-icon-user">
-                                <p:menuitem value="Dodaj kategorię" url="/manager/category/new.xhtml" icon="ui-icon-arrowreturnthick-1-w" />
+                            <p:submenu label="ADMIN" rendered="#{userMB.userAdmin()}" icon="ui-icon-user">
+                                <p:menuitem value="Dodaj kategorię" url="/pages/protected/admin/addCategory.xhtml" icon="ui-icon-arrowreturnthick-1-w" />
                                 <p:menuitem value="Dodaj pozycję menu" url="/manager/course/new.xhtml" icon="ui-icon-arrowreturnthick-1-e" />
-                                <p:menuitem value="Dodaj składnik" url="/manager/ingredient/new.xhtml" icon="ui-icon-arrowreturnthick-1-e"/>
                             </p:submenu>
                             <p:submenu label="trzecie" icon="ui-icon-user">
                                 <p:menuitem value="Lista zamówień" url="/employee/order/list.xhtml" icon="ui-icon-arrowreturnthick-1-w" />
@@ -51,16 +51,6 @@
                             <p:menuitem value="Rejestracja" url="/public/registration.xhtml"/>
                         </p:menubar>
                     </h:form>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <nav class="pull-right">
-                        <ul class="nav nav-pills">
-                            <li role="presentation"><a href="/webapp/public/index.xhtml">Home</a></li>
-                            <li role="presentation"><a href="/webapp/public/categories.xhtml">Menu</a></li>
-                        </ul>
-                    </nav>
                 </div>
             </div>
         </div>

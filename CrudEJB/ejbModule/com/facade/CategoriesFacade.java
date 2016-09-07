@@ -13,7 +13,7 @@ public interface CategoriesFacade {
 
 	public abstract Categories update(Categories categories);
 	
-	//public abstract void delete(Categories categories);
+	public abstract void delete(Categories categories);
 
 	public abstract Categories find(int entityID);
 

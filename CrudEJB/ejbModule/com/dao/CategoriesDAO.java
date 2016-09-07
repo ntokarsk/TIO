@@ -11,4 +11,8 @@ public class CategoriesDAO extends GenericDAO<Categories> {
     	super(Categories.class);
     }
     
+    public void delete(Categories categories) {
+        super.delete(categories.getId(), Categories.class);
+    }
+    
 }

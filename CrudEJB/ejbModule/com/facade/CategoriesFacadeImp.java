@@ -28,10 +28,10 @@ public class CategoriesFacadeImp implements CategoriesFacade {
 		return categoriesDAO.update(categories);
 	}
 	
-/*	@Override
+	@Override
 	public void delete(Categories categories) {
 		categoriesDAO.delete(categories);
-	}*/
+	}
 
 	@Override
 	public Categories find(int entityID) {
