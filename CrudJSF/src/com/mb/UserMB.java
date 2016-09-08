@@ -33,6 +33,10 @@ public class UserMB {
 		return getRequest().isUserInRole("ADMIN");
 	}
 	
+	public boolean isUserUser(){
+		return getRequest().isUserInRole("USER");
+	}
+	
 	public String logOut(){
 		getRequest().getSession().invalidate();
 		return "logout";
