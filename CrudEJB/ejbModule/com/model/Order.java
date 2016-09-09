@@ -22,16 +22,6 @@ public class Order {
 	private boolean payment;
 	private int price;
 
-/*	// relacja wiele-do-jedneog
-	public User user;
-
-	@ManyToOne(optional = false)
-	@JoinColumn(name = "id")
-	// klucz obcy
-	public User getUser() {
-		return user;
-	}*/
-
 	public int getOrder_id() {
 		return order_id;
 	}

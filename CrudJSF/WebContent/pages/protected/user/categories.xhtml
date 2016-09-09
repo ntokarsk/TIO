@@ -17,15 +17,6 @@
 		<ui:define name="content">
 			<div class="container">
 				<h:form>
-					<h3>
-						#{msgs.loginHello}: #{userMB.user.name} ||
-						<h:commandLink action="#{userMB.logOut()}" value="#{msgs.logout}" />
-						<h:commandButton value="test" ajax="false"
-							action="test.xhmtl?faces-redirect=true" />
-						<h:commandButton value="categories" ajax="false"
-							action="categories.xhmtl?faces-redirect=true" />
-					</h3>
-
 					<h:messages />
 					<p:dataTable value="#{categoriesController.allCategories}"
 						var="categories">
@@ -56,7 +47,8 @@
 										rendered="#{categories.id==dish.categories.id and userMB.userUser}" />
 									<h:commandButton
 										action="#{categoriesController.deleteMealStart(dish)}"
-										value="#{msgs.delete}" rendered="#{categories.id==dish.categories.id and userMB.userAdmin}">
+										value="#{msgs.delete}"
+										rendered="#{categories.id==dish.categories.id and userMB.userAdmin}">
 									</h:commandButton>
 								</p:column>
 								<p:column>
@@ -67,6 +59,11 @@
 											<p:panelGrid columns="4"
 												rendered="#{ingredient.dish.id==dish.id}">
 												<h:outputText value="#{ingredient.name}" />
+												<h:commandButton
+													action="#{dishController.deleteIngredient(ingredient)}"
+													value="#{msgs.delete}"
+													rendered="#{categories.id==dish.categories.id and userMB.userAdmin}">
+												</h:commandButton>
 											</p:panelGrid>
 										</ui:repeat>
 									</p:panelGrid>

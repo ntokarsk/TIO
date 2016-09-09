@@ -5,6 +5,7 @@
 	<projects>
 		<project>CrudEJB</project>
 		<project>CrudJSF</project>
+		<project>RESTfulDemoApplication</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

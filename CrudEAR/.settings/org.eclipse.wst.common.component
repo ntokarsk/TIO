@@ -9,5 +9,9 @@
             <dependent-object/>
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="RESTfulDemoApplication.war" deploy-path="/" handle="module:/resource/RESTfulDemoApplication/RESTfulDemoApplication">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
     </wb-module>
 </project-modules>
